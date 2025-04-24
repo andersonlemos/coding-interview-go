@@ -4,6 +4,4 @@
 
 A simple project to study algorithms in golang
 
-Structures implemented:
-
-- [x] Array List
+- Array List

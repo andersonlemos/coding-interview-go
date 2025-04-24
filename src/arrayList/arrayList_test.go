@@ -7,7 +7,7 @@ import (
 )
 
 func TestInitObject(t *testing.T) {
-	arrLst := arraylist.NewArrayList()
+	arrLst := arraylist.NewArrayList[string]()
 	if arrLst == nil {
 		t.Log("object was not loaded")
 		t.Fail()
@@ -16,7 +16,7 @@ func TestInitObject(t *testing.T) {
 }
 
 func TestAddAndsize(t *testing.T) {
-	arrLst := arraylist.NewArrayList()
+	arrLst := arraylist.NewArrayList[string]()
 	arrLst.Add("Object")
 	if arrLst.Size() <= 0 {
 		t.Logf("object size is wrong Went: %v Wrong: %v", arrLst.Size(), 0)
@@ -25,7 +25,7 @@ func TestAddAndsize(t *testing.T) {
 }
 
 func TestGet(t *testing.T) {
-	arrLst := arraylist.NewArrayList()
+	arrLst := arraylist.NewArrayList[string]()
 	arrLst.Add("Object")
 	item, err := arrLst.Get(0)
 	if err != nil {
@@ -40,7 +40,7 @@ func TestGet(t *testing.T) {
 }
 
 func TestGetOutOfBounds(t *testing.T) {
-	arrLst := arraylist.NewArrayList()
+	arrLst := arraylist.NewArrayList[string]()
 
 	_, err := arrLst.Get(1)
 	if err != nil {
@@ -51,7 +51,7 @@ func TestGetOutOfBounds(t *testing.T) {
 }
 
 func TestRemoveOutOfBounds(t *testing.T) {
-	arrLst := arraylist.NewArrayList()
+	arrLst := arraylist.NewArrayList[string]()
 
 	arrLst.Add("a")
 	arrLst.Add("b")
