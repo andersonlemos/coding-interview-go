@@ -1,0 +1,13 @@
+services:
+  coding-interview-go:
+    build:
+      context: .
+      dockerfile: devcontainer.Dockerfile
+    command: ["tail", "-f", "/dev/null"]
+    image: coding-interview-go
+    container_name: coding-interview-go
+    networks:
+      - coding-interview-go
+networks:
+  coding-interview-go:
+    driver: bridge

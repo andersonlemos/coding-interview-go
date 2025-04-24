@@ -1,0 +1,76 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
+{
+  "name": "Go Development container 1.24",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "service": "coding-interview-go",
+  "workspaceFolder": "/workspace/coding-interview-go",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace/coding-interview-go,type=bind,consistency=cached"
+  ],
+  "dockerComposeFile": [
+    "devcontainer.compose.yml"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "zshSyntaxHighlighting": true,
+      "zshAutoSuggestions": true,
+      "ohMyZsh": true,
+      "ohMyZshPlugins": [
+        "git",
+        "golang"
+      ],
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/devcontainers/features/go:1": {},
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
+  },
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "go version",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shellIntegration.enabled": true,
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/bin/zsh",
+            "icon": "terminal-debian",
+            "overrideName": true
+          }
+        }
+      },
+      "extensions": [
+        "premparihar.gotestexplorer",
+        "aaron-bond.better-comments",
+        "streetsidesoftware.code-spell-checker",
+        "alefragnani.bookmarks",
+        "eamodio.gitlens",
+        "codezombiech.gitignore",
+        "exiasr.hadolint",
+        "g.vscodeintell",
+        "usernamehw.errorlens",
+        "zainchen.json",
+        "redhat.vscode-yaml",
+        "quicktype.quicktype",
+        "nhoizey.gremlins",
+        "ms-vscode.makefile-tools",
+        "timonwong.shellcheck",
+        "wakatime.vscode-wakatime",
+        "ms-azuretools.vscode-docker",
+        "aaron-bond.better-comments",
+        "alefragnani.bookmarks",
+        "visualstudioexptteam.vscodeintellicode",
+        "bierner.markdown-preview-github-styles",
+        "davidanson.vscode-markdownlint"
+      ]
+    }
+  },
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "vscode"
+}
