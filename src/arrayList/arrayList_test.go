@@ -38,3 +38,35 @@ func TestGet(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestGetOutOfBounds(t *testing.T) {
+	arrLst := arraylist.NewArrayList()
+
+	_, err := arrLst.Get(1)
+	if err != nil {
+		t.Logf("index out of range")
+		t.Skip("error was expected in this case")
+	}
+
+}
+
+func TestRemoveOutOfBounds(t *testing.T) {
+	arrLst := arraylist.NewArrayList()
+
+	arrLst.Add("a")
+	arrLst.Add("b")
+	arrLst.Add("c")
+
+	if arrLst.Size() != 3 {
+		t.Logf("error adding indexes: expecting 3 has %v", arrLst.Size())
+		t.Fail()
+	}
+
+	err := arrLst.Remove(3)
+
+	if err != nil {
+		t.Log("error on removing index out of bound")
+		t.Skip("error was expected in this case")
+	}
+
+}
